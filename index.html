@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#7c5cff">
+<title>Planejamento 2027 · Suas respostas</title>
+<meta property="og:title" content="Planejamento 2027 · Suas respostas">
+<meta property="og:description" content="Perguntas do Rodrigo para o planejamento estratégico do Grupo. Responda pelo celular, por escrito ou falando.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5fb; --surface:#ffffff; --surface2:#f0eef8; --text:#16141f; --text2:#4a4759; --muted:#7a7790;
+  --border:#e4e1ef; --accent:#7c5cff; --accent-strong:#6a48f5; --accent-soft:#efeaff; --accent-text:#ffffff;
+  --ok:#0f9d6e; --warn:#b7791f; --erro:#d64545; --shadow:0 1px 2px rgba(22,20,31,.04),0 8px 24px rgba(22,20,31,.06);
+  --radius:18px; --display:"Space Grotesk",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0f0e15; --surface:#17161f; --surface2:#1e1c28; --text:#f2f1f7; --text2:#c3c0d4; --muted:#8d8aa3;
+  --border:#2b2938; --accent:#8f74ff; --accent-strong:#a28cff; --accent-soft:#251f3d; --accent-text:#ffffff;
+  --ok:#3ccf98; --warn:#e2b04a; --erro:#f07171; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:-20% -10% auto;height:420px;pointer-events:none;z-index:0;
+  background:radial-gradient(40% 60% at 25% 30%,rgba(124,92,255,.16),transparent 70%),radial-gradient(35% 55% at 80% 20%,rgba(20,184,166,.10),transparent 70%)}
+.pagina{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:28px 16px 64px}
+.etiqueta{font:600 12px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 clamp(30px,8vw,40px)/1.1 var(--display);letter-spacing:-.02em;margin:14px 0 18px}
+.intro p{margin:0 0 12px;color:var(--text2);font-size:17px}
+.assinatura{margin-top:4px;font:600 15px var(--display);color:var(--text)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 14px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--border);font-size:13.5px;font-weight:600;color:var(--text2)}
+.chip b{color:var(--text)}
+.dica{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--accent-soft);color:var(--text2);font-size:14.5px;line-height:1.5}
+.dica svg{flex:none;margin-top:2px;color:var(--accent)}
+/* barra fixa de progresso */
+.barra{position:sticky;top:0;z-index:5;margin:26px -16px 6px;padding:10px 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.barra-linha{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;font-weight:600;color:var(--text2)}
+.trilho{height:6px;border-radius:99px;background:var(--surface2);margin-top:8px;overflow:hidden}
+.trilho i{display:block;height:100%;width:0;background:var(--accent);border-radius:99px;transition:width .35s ease}
+.status{font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.status[data-estado=salvo]{color:var(--ok)} .status[data-estado=offline]{color:var(--warn)} .status[data-estado=erro]{color:var(--erro)}
+.ponto{width:7px;height:7px;border-radius:50%;background:currentColor}
+h2{font:600 13px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:34px 4px 12px}
+.pergunta{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 18px 16px;margin-bottom:14px;box-shadow:var(--shadow);transition:border-color .2s}
+.pergunta:focus-within{border-color:var(--accent)}
+.cab{display:flex;gap:12px;align-items:flex-start}
+.num{flex:none;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:700 14px var(--display);background:var(--surface2);color:var(--text2);transition:background .2s,color .2s}
+.pergunta.feita .num{background:var(--accent);color:var(--accent-text)}
+.texto{font-weight:600;font-size:17px;line-height:1.45;margin:3px 0 0}
+.ajuda{margin:6px 0 0 44px;color:var(--muted);font-size:14.5px}
+textarea{display:block;width:100%;margin-top:14px;min-height:112px;resize:none;overflow:hidden;padding:13px 14px;border-radius:14px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:16px/1.55 var(--body);transition:border-color .2s,box-shadow .2s}
+textarea::placeholder{color:var(--muted)}
+textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
+textarea:disabled{opacity:.7}
+.enviar{margin-top:30px;padding:22px 18px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow);text-align:center}
+.enviar p{margin:0 0 16px;color:var(--text2);font-size:14.5px}
+button{font:inherit;cursor:pointer}
+.botao{display:inline-flex;justify-content:center;align-items:center;gap:8px;width:100%;min-height:54px;padding:0 22px;border:0;border-radius:14px;background:var(--accent);color:var(--accent-text);font:700 17px var(--display);letter-spacing:.01em;transition:background .2s,transform .1s}
+.botao:hover{background:var(--accent-strong)} .botao:active{transform:scale(.99)} .botao:disabled{opacity:.6;cursor:default}
+.botao.sec{background:var(--surface2);color:var(--text)}
+.aviso{margin:18px 0 0;padding:13px 16px;border-radius:14px;font-size:14.5px;line-height:1.5;border:1px solid var(--border);background:var(--surface)}
+.aviso.ok{border-color:color-mix(in srgb,var(--ok) 45%,var(--border))}
+.centro{min-height:70vh;display:grid;place-items:center;text-align:center}
+.centro .caixa{max-width:440px}
+.selo{width:72px;height:72px;margin:0 auto 18px;border-radius:22px;display:grid;place-items:center;background:var(--accent);color:#fff}
+.centro h1{margin:0 0 10px}
+.centro p{color:var(--text2);margin:0 0 22px}
+.esqueleto{height:118px;border-radius:var(--radius);background:linear-gradient(90deg,var(--surface) 25%,var(--surface2) 50%,var(--surface) 75%);background-size:200% 100%;animation:brilho 1.2s infinite;margin-bottom:14px}
+@keyframes brilho{to{background-position:-200% 0}}
+dialog{border:0;border-radius:20px;padding:24px;max-width:380px;width:calc(100% - 32px);background:var(--surface);color:var(--text);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,8,20,.45)}
+dialog h3{font:700 20px var(--display);margin:0 0 8px} dialog p{margin:0 0 20px;color:var(--text2)}
+.acoes{display:grid;gap:10px}
+.rodape{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<main class="pagina" id="app" aria-live="polite">
+  <div class="esqueleto" style="height:40px;width:60%"></div>
+  <div class="esqueleto"></div><div class="esqueleto"></div><div class="esqueleto"></div>
+</main>
+
+<dialog id="confirmar">
+  <h3>Faltam <span id="faltam"></span></h3>
+  <p>Pode enviar assim mesmo — e voltar depois por este link para completar até o prazo.</p>
+  <div class="acoes">
+    <button class="botao" id="enviarAssim" type="button">Enviar assim mesmo</button>
+    <button class="botao sec" id="voltar" type="button">Voltar e completar</button>
+  </div>
+</dialog>
+
+<script>
+/*
+ * Página de resposta dos questionários do Grupo Innova (PE 2027 em diante).
+ * Cada pessoa recebe um link com o próprio token (/r/<token> ou ?t=<token>). A página só fala com duas
+ * funções do Supabase do InAudit — pesquisa_abrir e pesquisa_salvar —, e as duas exigem o token.
+ * A chave abaixo é a publicável (feita para ir no navegador); as tabelas não ficam expostas.
+ */
+const API = "https://acdvblhzzaneddlxqyst.supabase.co/rest/v1/rpc/";
+const CHAVE = "sb_publishable_5VNHONwy_SFGe7BAJXPqMw_M2Pet1BV";
+const token = (location.pathname.match(/\/r\/([a-f0-9]{32})\/?$/) || [])[1] || new URLSearchParams(location.search).get("t") || "";
+const LOCAL = "pesquisa:" + token;
+const app = document.getElementById("app");
+
+let dados = null, respostas = {}, pendente = false, timer = null, salvando = false;
+
+async function rpc(fn, corpo) {
+  const r = await fetch(API + fn, { method: "POST", headers: { apikey: CHAVE, "Content-Type": "application/json" }, body: JSON.stringify(corpo) });
+  const j = await r.json().catch(() => null);
+  if (!r.ok) throw Object.assign(new Error((j && j.message) || "erro"), { http: r.status });
+  return j;
+}
+const el = (tag, attrs = {}, ...filhos) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) k === "class" ? (n.className = v) : k.startsWith("on") ? n.addEventListener(k.slice(2), v) : n.setAttribute(k, v);
+  for (const f of filhos.flat()) if (f != null) n.append(f);
+  return n;
+};
+const lerLocal = () => { try { return JSON.parse(localStorage.getItem(LOCAL) || "null"); } catch { return null; } };
+const gravarLocal = () => { try { localStorage.setItem(LOCAL, JSON.stringify({ r: respostas, pendente })); } catch {} };
+const dataPrazo = (d) => {
+  if (!d) return "";
+  const x = new Date(d + "T12:00:00");
+  return `${x.toLocaleDateString("pt-BR", { weekday: "long" }).replace("-feira", "")}, ${x.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" })}`;
+};
+const hora = (iso) => new Date(iso).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+const preenchida = (id) => (respostas[id] || "").trim().length > 0;
+
+function tela(icone, titulo, texto, botao) {
+  app.replaceChildren(el("div", { class: "centro" }, el("div", { class: "caixa" },
+    el("div", { class: "selo", "aria-hidden": "true" }, icone), el("h1", {}, titulo), el("p", {}, texto), botao || null)));
+}
+const svg = (d) => { const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("width", "34"); s.setAttribute("height", "34"); s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("fill", "none"); s.setAttribute("stroke", "currentColor"); s.setAttribute("stroke-width", "2.2"); s.setAttribute("stroke-linecap", "round"); s.setAttribute("stroke-linejoin", "round"); s.innerHTML = d; return s; };
+
+function status(estado, texto) {
+  const s = document.getElementById("status");
+  if (!s) return;
+  s.dataset.estado = estado;
+  s.replaceChildren(el("span", { class: "ponto" }), texto);
+}
+function progresso() {
+  const total = dados.perguntas.length, feitas = dados.perguntas.filter((p) => preenchida(p.id)).length;
+  document.getElementById("contagem").textContent = `${feitas} de ${total} respondidas`;
+  document.getElementById("trilho").style.width = `${(feitas / total) * 100}%`;
+  for (const p of dados.perguntas) document.getElementById("p-" + p.id)?.classList.toggle("feita", preenchida(p.id));
+}
+
+async function salvar(enviar = false) {
+  if (salvando && !enviar) { pendente = true; return; }
+  salvando = true; status("salvando", "Salvando…");
+  try {
+    const r = await rpc("pesquisa_salvar", { p_token: token, p_respostas: respostas, p_enviar: enviar });
+    pendente = false; gravarLocal();
+    if (r && r.enviado_em) dados.enviado_em = r.enviado_em;
+    status("salvo", "Salvo");
+    return true;
+  } catch (e) {
+    pendente = true; gravarLocal();
+    status(navigator.onLine ? "erro" : "offline", navigator.onLine ? "Não salvou — tento de novo" : "Sem internet — guardado no celular");
+    return false;
+  } finally { salvando = false; }
+}
+function agendar() { pendente = true; gravarLocal(); clearTimeout(timer); status("salvando", "Digitando…"); timer = setTimeout(() => salvar(), 1200); }
+setInterval(() => { if (pendente && !salvando && dados && !dados.encerrado) salvar(); }, 15000);
+addEventListener("online", () => { if (pendente) salvar(); });
+
+function ajustarAltura(t) { t.style.height = "auto"; t.style.height = Math.max(112, t.scrollHeight + 2) + "px"; }
+
+function formulario() {
+  const blocos = [];
+  for (const p of dados.perguntas) {
+    let b = blocos.find((x) => x.nome === p.bloco);
+    if (!b) blocos.push((b = { nome: p.bloco, itens: [] }));
+    b.itens.push(p);
+  }
+  const fechado = !!dados.encerrado;
+  const conteudo = [
+    el("div", { class: "etiqueta" }, dados.titulo),
+    el("h1", {}, `Oi, ${dados.nome}.`),
+    el("div", { class: "intro" }, (dados.introducao || "").split(/\n\s*\n/).map((par) => el("p", {}, par)), dados.assinatura ? el("div", { class: "assinatura" }, "— " + dados.assinatura) : null),
+    el("div", { class: "chips" },
+      el("span", { class: "chip" }, el("b", {}, String(dados.perguntas.length)), " perguntas"),
+      dados.prazo ? el("span", { class: "chip" }, "Até ", el("b", {}, dataPrazo(dados.prazo))) : null,
+      el("span", { class: "chip" }, "Salva sozinho")),
+    el("div", { class: "dica" }, svg('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/>'),
+      el("span", {}, "Pode escrever ou falar: toque no microfone do teclado do celular e dite a resposta. Tudo fica salvo enquanto você responde — dá para fechar e voltar depois por este mesmo link.")),
+    dados.enviado_em ? el("div", { class: "aviso ok" }, `Você já enviou em ${hora(dados.enviado_em)}. Se quiser, ajuste e envie de novo.`) : null,
+    fechado ? el("div", { class: "aviso" }, "Este questionário foi encerrado. Suas respostas ficam aqui só para consulta.") : null,
+    el("div", { class: "barra" },
+      el("div", { class: "barra-linha" }, el("span", { id: "contagem" }), el("span", { class: "status", id: "status", "data-estado": "salvo" })),
+      el("div", { class: "trilho" }, el("i", { id: "trilho" }))),
+  ];
+  let n = 0;
+  for (const b of blocos) {
+    conteudo.push(el("h2", {}, b.nome));
+    for (const p of b.itens) {
+      n++;
+      const t = el("textarea", { id: "r-" + p.id, "aria-labelledby": "t-" + p.id, placeholder: "Sua resposta…", rows: "4" });
+      t.value = respostas[p.id] || "";
+      if (fechado) t.disabled = true;
+      t.addEventListener("input", () => { respostas[p.id] = t.value; ajustarAltura(t); progresso(); agendar(); });
+      conteudo.push(el("section", { class: "pergunta", id: "p-" + p.id },
+        el("div", { class: "cab" }, el("span", { class: "num", "aria-hidden": "true" }, String(n).padStart(2, "0")), el("p", { class: "texto", id: "t-" + p.id }, p.texto)),
+        p.ajuda ? el("p", { class: "ajuda" }, p.ajuda) : null, t));
+    }
+  }
+  if (!fechado) conteudo.push(el("div", { class: "enviar" },
+    el("p", {}, "Quando terminar, envie. Até o prazo, dá para voltar por este link e ajustar."),
+    el("button", { class: "botao", type: "button", id: "botaoEnviar", onclick: tentarEnviar }, dados.enviado_em ? "Enviar de novo" : "Enviar respostas")));
+  conteudo.push(el("p", { class: "rodape" }, "Grupo Innova · respostas lidas só pelo Rodrigo"));
+  app.replaceChildren(...conteudo);
+  document.querySelectorAll("textarea").forEach(ajustarAltura);
+  progresso();
+  status(pendente ? "salvando" : "salvo", pendente ? "Salvando…" : dados.enviado_em || Object.keys(respostas).length ? "Salvo" : "Pronto para começar");
+}
+
+function tentarEnviar() {
+  const faltam = dados.perguntas.filter((p) => !preenchida(p.id)).length;
+  if (faltam) {
+    document.getElementById("faltam").textContent = faltam === 1 ? "1 pergunta" : `${faltam} perguntas`;
+    document.getElementById("confirmar").showModal();
+  } else enviar();
+}
+document.getElementById("voltar").addEventListener("click", () => {
+  document.getElementById("confirmar").close();
+  const p = dados.perguntas.find((x) => !preenchida(x.id));
+  if (p) { const t = document.getElementById("r-" + p.id); t.scrollIntoView({ behavior: "smooth", block: "center" }); setTimeout(() => t.focus(), 350); }
+});
+document.getElementById("enviarAssim").addEventListener("click", () => { document.getElementById("confirmar").close(); enviar(); });
+
+async function enviar() {
+  const b = document.getElementById("botaoEnviar");
+  b.disabled = true; b.textContent = "Enviando…";
+  clearTimeout(timer);
+  const ok = await salvar(true);
+  if (!ok) { b.disabled = false; b.textContent = "Tentar enviar de novo"; return; }
+  scrollTo({ top: 0 });
+  tela(svg('<path d="m5 12 5 5L20 7"/>'), `Recebido, ${dados.nome}. Obrigado!`,
+    `O Rodrigo vai ler com calma. Se quiser ajustar alguma resposta, é só abrir este link de novo${dados.prazo ? " até " + dataPrazo(dados.prazo) : ""}.`,
+    el("button", { class: "botao sec", type: "button", onclick: formulario }, "Revisar minhas respostas"));
+}
+
+(async function iniciar() {
+  if (!/^[a-f0-9]{32}$/.test(token)) {
+    return tela(svg('<path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/>'), "Link incompleto", "Abra o link exatamente como chegou na mensagem. Se continuar assim, peça um novo ao Rodrigo.");
+  }
+  try {
+    dados = await rpc("pesquisa_abrir", { p_token: token });
+  } catch {
+    return tela(svg('<path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/>'), "Sem conexão", "Não consegui abrir agora. Confira a internet e tente de novo.",
+      el("button", { class: "botao", type: "button", onclick: () => location.reload() }, "Tentar de novo"));
+  }
+  if (!dados) return tela(svg('<path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/>'), "Link inválido", "Este link não existe mais. Peça um novo ao Rodrigo.");
+  respostas = { ...(dados.respostas || {}) };
+  const local = lerLocal();
+  // o que ficou só no celular (sem internet na hora) ganha do que está no servidor
+  if (local && local.pendente && !dados.encerrado) { respostas = { ...respostas, ...local.r }; pendente = true; }
+  document.title = `${dados.titulo} · ${dados.nome}`;
+  formulario();
+  if (pendente) salvar();
+})();
+</script>
+</body>
+</html>
