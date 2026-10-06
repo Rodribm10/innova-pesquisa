@@ -216,7 +216,7 @@ function formulario() {
     el("p", {}, "Quando terminar, envie. Até o prazo, dá para voltar por este link e ajustar."),
     el("button", { class: "botao", type: "button", id: "botaoEnviar", onclick: tentarEnviar }, dados.enviado_em ? "Enviar de novo" : "Enviar respostas")));
   conteudo.push(el("p", { class: "rodape" }, "Grupo Innova · respostas lidas só pelo Rodrigo"));
-  app.replaceChildren(...conteudo);
+  app.replaceChildren(...conteudo.filter(Boolean));
   document.querySelectorAll("textarea").forEach(ajustarAltura);
   progresso();
   status(pendente ? "salvando" : "salvo", pendente ? "Salvando…" : dados.enviado_em || Object.keys(respostas).length ? "Salvo" : "Pronto para começar");
